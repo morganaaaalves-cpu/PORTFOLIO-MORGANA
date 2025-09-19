@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>LOGIN</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: hotpink;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+        }
+
+        h1 {
+            color: white;
+            margin-bottom: 30px;
+            font-size: 36px;
+        }
+
+        .container {
+            background-color: white;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+            width: 90%;
+            max-width: 400px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+            text-align: left;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+            color: hotpink;
+        }
+
+        input[type="text"],
+        input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ffc6e3;
+            border-radius: 8px;
+            box-sizing: border-box;
+            font-size: 16px;
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            background-color: hotpink;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: deeppink;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>LOGIN</h1>
+
+    <div class="container">
+        <form onsubmit="return false;">
+            <div class="form-group">
+                <label for="username">Usuário:</label>
+                <input type="text" id="username" name="username" required />
+            </div>
+
+            <div class="form-group">
+                <label for="password">Senha:</label>
+                <input type="password" id="password" name="password" required />
+            </div>
+
+            <button type="button" onclick="logar()">Entrar</button>
+        </form>
+    </div>
+
+    <script>
+        function logar() {
+            var login = document.getElementById("username").value;
+            var senha = document.getElementById("password").value;
+
+            if (login === "admin" && senha === "admin") {
+                alert("Login realizado com sucesso!");
+                location.href= "index.html";
+            } else {
+                alert("Usuário ou senha incorretos.");
+            }
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividades Desenvolvidas</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(to right, #f0f4f8, #d9e2ec);
+            padding: 40px;
+            color: #333;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 2.2em;
+            margin-bottom: 30px;
+        }
+
+        button {
+            padding: 12px 25px;
+            font-size: 18px;
+            font-weight: bold;
+            background: linear-gradient(135deg, #28a745, #218838);
+            color: white;
+            border: none;
+            border-radius: 30px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.3s;
+        }
+
+        button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .capas {
+            display: none;
+            opacity: 0;
+            transition: opacity 0.8s ease;
+            margin-top: 30px;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .capas.active {
+            display: flex;
+            opacity: 1;
+        }
+
+        .capas a {
+            text-decoration: none;
+        }
+
+        .capas a img {
+            width: 220px;
+            height: auto;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 4px solid white;
+        }
+
+        .capas a img:hover {
+            transform: scale(1.08);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+            border-color: #28a745;
+        }
+
+        @media (max-width: 768px) {
+            .capas {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Atividades Desenvolvidas</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f2f2f2;
+            padding: 40px;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+        }
+
+        button {
+            padding: 10px 20px;
+            margin: 10px;
+            font-size: 16px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        .galeria {
+            margin-top: 20px;
+            display: none;
+            max-width: 600px;
+            margin: 20px auto;
+        }
+
+        .galeria img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .botoes-navegacao {
+            margin-top: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Atividades Desenvolvidas</h1>
+
+    <!-- Botão para mostrar/ocultar galeria -->
+    <button onclick="toggleGaleria()">Clique para ver as atividades</button>
+
+    <!-- Galeria com navegação -->
+    <div class="galeria" id="galeria">
+        <a id="linkImagem" href="desenv1.png" target="_blank">
+            <img id="imagemGaleria" src="desenv1.png" alt="Atividade">
+        </a>
+
+        <div class="botoes-navegacao">
+            <button onclick="fotoAnterior()">⟵ Anterior</button>
+            <button onclick="proximaFoto()">Próxima ⟶</button>
+        </div>
+    </div>
+
+    <script>
+        const imagens = [
+            "desenv1.png",
+            "desenv2.png",
+            "desenv3.png",
+            "desenv4.png"
+        ];
+
+        let indiceAtual = 0;
+
+        const galeria = document.getElementById("galeria");
+        const imagem = document.getElementById("imagemGaleria");
+        const linkImagem = document.getElementById("linkImagem");
+
+        function toggleGaleria() {
+            if (galeria.style.display === "none" || galeria.style.display === "") {
+                galeria.style.display = "block";
+            } else {
+                galeria.style.display = "none";
+            }
+        }
+
+        function atualizarImagem() {
+            imagem.src = imagens[indiceAtual];
+            linkImagem.href = imagens[indiceAtual];
+        }
+
+        function proximaFoto() {
+            indiceAtual = (indiceAtual + 1) % imagens.length;
+            atualizarImagem();
+        }
+
+        function fotoAnterior() {
+            indiceAtual = (indiceAtual - 1 + imagens.length) % imagens.length;
+            atualizarImagem();
+        }
+    </script>
+
+</body>
+
+</html>

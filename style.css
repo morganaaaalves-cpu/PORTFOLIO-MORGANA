@@ -1,0 +1,375 @@
+:root {
+    --rosa-principal: #ff79b9;
+    --rosa-claro: #ff79b9;
+    --texto-branco: white;
+}
+
+/* Base */
+body {
+    background-color: #ffe6ff;
+    color: var(--rosa-principal);
+    font-family: Arial, sans-serif;
+    justify-content: center;
+    padding-top: 50px;
+}
+
+/* Títulos globais */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.titulo-do-objetivo {
+    color: var(--rosa-principal);
+}
+
+/* Navegação */
+ul {
+    display: flex;
+    justify-content: space-between;
+    list-style-type: none;
+    align-items: center;
+    padding: 16px;
+}
+
+header a {
+    color: var(--rosa-principal);
+    text-decoration: none;
+}
+
+header nav ul {
+    list-style-type: none;
+}
+
+header nav ul li {
+    display: inline-block;
+    margin-right: 40px;
+}
+
+header .btn-ppe button {
+    padding: 10px 40px;
+    font-size: 18px;
+    font-weight: 600;
+    background-color: var(--rosa-principal);
+    border: 0;
+    border-radius: 30px;
+    cursor: pointer;
+}
+
+/* Botões */
+.botao {
+    background-color: var(--rosa-principal);
+    color: var(--texto-branco);
+    padding: 10px 20px;
+    border: none;
+    border-radius: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    display: inline-block;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+    margin: 5px;
+    margin-top: -100px;
+}
+
+.botao:hover,
+.botao:active {
+    background-color: var(--rosa-claro);
+}
+
+.botao:active {
+    transform: scale(0.98);
+}
+
+/* Títulos */
+h1 {
+    font-size: 150px;
+    margin-left: 20px;
+    text-align: center;
+}
+
+h2 {
+    font-size: 200px;
+    margin-top: -160px;
+    text-align: center;
+}
+
+h3 {
+    font-size: 20px;
+    margin-top: -200px;
+    text-align: center;
+}
+
+h5 {
+    font-size: 50px;
+    text-align: left;
+    margin-top: -85px;
+    padding: 0 4%;
+    color: var(--rosa-principal);
+}
+
+h6 {
+    font-size: 15px;
+    margin-top: 10px;
+    margin-bottom: 6px;
+    color: var(--rosa-principal);
+    line-height: 1.2;
+}
+
+h7 {
+    font-size: 18px;
+    margin-top: 10px;
+    margin-bottom: 6px;
+    font-weight: bold;
+    /* 🔹 deixa em negrito */
+}
+
+/* Caixa de Identificação */
+.box-identificação {
+    background-color: white;
+    padding: 20px;
+    border-radius: 16px;
+    color: var(--rosa-principal);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    width: 85%;
+    max-width: 1000px;
+    margin: 70px auto 0;
+}
+
+.box-identificação:hover {
+    transform: scale(1.02);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+}
+
+.titulo-identificacao {
+    font-size: 50px;
+    color: var(--rosa-principal);
+    text-align: center;
+    margin-top: 150px;
+    margin-bottom: 40px;
+}
+
+.box-identificação h4 {
+    font-size: 24px;
+    margin-top: 5px;
+    margin-bottom: 2px;
+    color: var(--rosa-principal);
+    line-height: 1.2;
+}
+
+.box-identificação p {
+    font-size: 20px;
+    margin: 0 0 10px;
+    font-family: 'Poppins', sans-serif;
+    text-align: left;
+    line-height: 1.4;
+}
+
+/* Layout horizontal com imagem */
+.box-identificação-horizontal {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.foto-morgana {
+    width: 220px;
+    height: 280px;
+    object-fit: cover;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.conteudo-texto {
+    flex: 1;
+}
+
+/* Imagem redonda */
+.identificação-foto {
+    float: right;
+    clear: both;
+    width: 400px;
+    height: 400px;
+    border: 2px solid var(--rosa-principal);
+    border-radius: 50%;
+}
+
+/* Texto extra */
+.texto-destaque {
+    text-align: center;
+    font-size: 35px;
+    background-color: var(--rosa-principal);
+    color: white;
+    padding: 6px 12px;
+    display: inline-block;
+    border-radius: 5px;
+    margin: 40px auto;
+}
+
+/* Parágrafo estilizado */
+.paragrafo-estilizado {
+    color: var(--rosa-principal);
+    font-family: 'Georgia', serif;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 1.6;
+    text-align: justify;
+    letter-spacing: 0.5px;
+    text-shadow: 1px 1px 2px #f8c8dc;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: ff79b9#f8c8dc;
+    margin: 0;
+    padding: 20px;
+}
+
+.titulo-do-projeto {
+    text-align: center;
+    color: white;
+    margin-bottom: 40px;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.card {
+    width: 250px;
+    background-color: white;
+    border-radius: 15px;
+    padding: 20px;
+    /* Increased padding for better spacing */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    color: #555;
+    /* Default color for text */
+    cursor: pointer;
+    transition: all 0.3s ease;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.card:hover {
+    box-shadow: 0 5px 15px hotpink;
+    transform: translateY(-5px);
+    /* Adds a slight lift effect */
+}
+
+/* --- */
+
+.card .title {
+    font-weight: bold;
+    font-size: 1.2em;
+    /* Use relative units for better scalability */
+    margin-bottom: 10px;
+    color: hotpink;
+    /* Title color stands out */
+}
+
+.card .content {
+    font-size: 1em;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    margin-top: 10px;
+}
+
+.card:hover .content {
+    opacity: 1;
+}
+
+/* Fonte romântica e leve */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Quicksand:wght@400;600&display=swap');
+
+/* Seção principal da história */
+.historia-section {
+    background: #ffe6ff;
+    padding: 100px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.historia-container {
+    background: var(--rosa-principal);
+    backdrop-filter: blur(15px);
+    border-radius: 30px;
+    padding: 80px 40px 60px;
+    max-width: 900px;
+    width: 100%;
+    box-shadow: 0 8px 30px var(--rosa-principal);
+    position: relative;
+    z-index: 2;
+    text-align: center;
+}
+
+.titulo-historia {
+    font-family: 'Playfair Display', serif;
+    font-size: 48px;
+    color: #ff79b9;;
+    margin-bottom: 30px;
+    font-weight: bold;
+    text-shadow: 1px 1px 2px #dbc5d0;
+    text-align: center;
+}
+
+/* Texto da história — sem recuo de parágrafo */
+.texto-historia {
+    font-family: 'Quicksand', sans-serif;
+    font-size: 20px;
+    color: white;
+    line-height: 1.8;
+    text-align: justify;
+    margin-top: 50px;
+}
+
+/* Seção Projetos */
+.projeto {
+    padding: 40px 4%;
+    margin-top: -70px;
+}
+
+.flex {
+    display: flex;
+    gap: 80px;
+}
+
+.projeto .projeto-box {
+    color: var(--rosa-principal);
+    padding: 80px;
+    border-radius: 20px;
+    transition: 0.2s;
+    background-color: white;
+}
+
+.projeto .projeto-box:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 8px var(--rosa-principal);
+}
+
+.titulo-do-projeto {
+    font-size: 50px;
+    margin: 30px 0 70px 0;
+    text-align: center;
+    color: var(--rosa-principal);
+}
+
+/* Rodapé */
+footer {
+    background-color: #ff79b9;
+    color: #ffffff;
+    text-align: center;
+    padding: 0.5rem;
+    font-size: 0.95rem;
+    margin-top: 4rem;
+}
