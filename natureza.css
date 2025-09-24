@@ -1,5 +1,7 @@
+
+
 body {
-    background-color: hsl(211, 100%, 30%);
+    background-color: hotpink;
 }
 
 h1 {
@@ -8,6 +10,7 @@ h1 {
     text-align: center;
     margin-top: 100px;
     color: rgb(255, 255, 255);
+    border-bottom: 4px solid var(--rosa-claro);
 }
 
 .galeria {
@@ -29,3 +32,4 @@ h1 {
 .atividade img:hover {
     transform: scale(1.05);
 }
+

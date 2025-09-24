@@ -1,14 +1,8 @@
-:root {
-    --rosa-principal: #ff79b9;
-    --rosa-claro: #ff79b9;
-    --texto-branco: white;
-}
 
 /* Base */
 body {
-    background-color: #ffe6ff;
-    color: var(--rosa-principal);
-    font-family: Arial, sans-serif;
+    color:white;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     justify-content: center;
     padding-top: 50px;
 }
@@ -59,7 +53,7 @@ header .btn-ppe button {
 
 /* Botões */
 .botao {
-    background-color: var(--rosa-principal);
+    background-color: hsl(211, 95%, 37%);
     color: var(--texto-branco);
     padding: 10px 20px;
     border: none;
@@ -127,7 +121,7 @@ h7 {
 
 /* Caixa de Identificação */
 .box-identificação {
-    background-color: white;
+    background-color: #004a98;
     padding: 20px;
     border-radius: 16px;
     color: var(--rosa-principal);
@@ -218,12 +212,12 @@ h7 {
     line-height: 1.6;
     text-align: justify;
     letter-spacing: 0.5px;
-    text-shadow: 1px 1px 2px #f8c8dc;
+    text-shadow: 1px 1px 2px hsl(211, 100%, 30%);
 }
 
 body {
     font-family: Arial, sans-serif;
-    background-color: ff79b9#f8c8dc;
+    background-color: #004a98;
     margin: 0;
     padding: 20px;
 }
@@ -243,12 +237,12 @@ body {
 
 .card {
     width: 250px;
-    background-color: white;
+    background-color: hsl(211, 95%, 37%);
     border-radius: 15px;
     padding: 20px;
     /* Increased padding for better spacing */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    color: #555;
+    box-shadow: white;
+    color: #ffffff;
     /* Default color for text */
     cursor: pointer;
     transition: all 0.3s ease;
@@ -258,7 +252,7 @@ body {
 }
 
 .card:hover {
-    box-shadow: 0 5px 15px hotpink;
+    box-shadow: 0 5px 15px white;;
     transform: translateY(-5px);
     /* Adds a slight lift effect */
 }
@@ -270,7 +264,7 @@ body {
     font-size: 1.2em;
     /* Use relative units for better scalability */
     margin-bottom: 10px;
-    color: hotpink;
+    color: white;;
     /* Title color stands out */
 }
 
@@ -290,7 +284,7 @@ body {
 
 /* Seção principal da história */
 .historia-section {
-    background: #ffe6ff;
+    background: hsl(211, 100%, 30%);
     padding: 100px 20px;
     display: flex;
     justify-content: center;
@@ -301,7 +295,7 @@ body {
 }
 
 .historia-container {
-    background: var(--rosa-principal);
+    background: hsl(211, 95%, 37%);
     backdrop-filter: blur(15px);
     border-radius: 30px;
     padding: 80px 40px 60px;
@@ -316,10 +310,10 @@ body {
 .titulo-historia {
     font-family: 'Playfair Display', serif;
     font-size: 48px;
-    color: #ff79b9;;
+    color: white;
     margin-bottom: 30px;
     font-weight: bold;
-    text-shadow: 1px 1px 2px #dbc5d0;
+    text-shadow: 1px 1px 2px hsl(211, 100%, 30%);
     text-align: center;
 }
 
@@ -349,7 +343,7 @@ body {
     padding: 80px;
     border-radius: 20px;
     transition: 0.2s;
-    background-color: white;
+    background-color: hsl(211, 95%, 37%);
 }
 
 .projeto .projeto-box:hover {
@@ -366,8 +360,8 @@ body {
 
 /* Rodapé */
 footer {
-    background-color: #ff79b9;
-    color: #ffffff;
+    background-color: hsl(211, 100%, 30%);
+    color: white;
     text-align: center;
     padding: 0.5rem;
     font-size: 0.95rem;
