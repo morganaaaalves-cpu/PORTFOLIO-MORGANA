@@ -1,34 +1,84 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MEU PORTFÓLIO VIRTUAL MORGANA</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css"> 
+    
+    <style>
+        /* Estilos de Ícones de Atividades (Apenas se o style.css não carregar, ou para sobrescrever. 
+           O ideal é que estes estilos também estejam no style.css) */
+        .icones-atividades {
+            width: 90%;
+            max-width: 1200px;
+            margin: 50px auto;
+            text-align: center;
+        }
+
+        .icones-atividades ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 40px; 
+        }
+
+        .icones-atividades li {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            text-decoration: none;
+            color: inherit;
+            transition: transform 0.3s ease;
+        }
+
+        .icones-atividades li:hover {
+            transform: translateY(-5px);
+        }
+
+        .icones-atividades a {
+            text-decoration: none; 
+            color: #1a237e; 
+        }
+
+        .icones-atividades img {
+            width: 150px; 
+            height: 150px;
+            object-fit: cover;
+            border-radius: 50%; 
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            border: 3px solid #5c51bd; /* Cor da borda */
+        }
+
+        .icones-atividades span {
+            margin-top: 10px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+    </style>
 </head>
 
 <body>
     <nav>
         <ul>
             <li>
-                <a class="botao"
-                    href="PPE.html">PPE</a>
-            </li>
-
-            <li>
-                <a class="botao" href="ATIVIDADES/ATIVIDADES.HTML">ATIVIDADES</a>
+                <a class="botao" href="Linguagens.html">Linguagens e suas técnologias</a>
             </li>
             <li>
-                <a class="botao"
-                    href="CURRÍCULO/CURRÍCULO.HTML">CURRÍCULO</a>
-            </li>
-
-            <li>
-                <a class="botao" href="REFERÊNCIAS/REFERÊNCIAS.HTML">REFERÊNCIAS</a>
+                <a class="botao" href="humanas.html">Ciências Humanas</a>
             </li>
             <li>
-                <a class="botao" href="anexos.html">ANEXOS</a>
+                <a class="botao" href="natureza.html">Ciências da Natureza</a>
+            </li>
+            <li>
+                <a class="botao" href="matematica.html">Matemática e suas técnologias</a>
+            </li>
+            <li>
+                <a class="botao" href="senai.html">Téc. Informática p/ Internet</a>
             </li>
         </ul>
     </nav>
@@ -43,30 +93,22 @@
             <h2 class="titulo-identificacao">Identificação pessoal</h2>
 
             <div class="box-identificação box-identificação-horizontal">
-                <img src="img/foto_morgana.jpg" alt="Foto Morgana" class="foto-morgana">
+                <img src="img/foto_morgana.jpg" alt="Foto Morgana" class="foto-morgana"> 
 
                 <div class="conteudo-texto">
                     <h4>Nome:</h4>
                     <p>Eyvillim Morgana Alves Guimarães.</p>
-
                     <h4>Filiação:</h4>
                     <p>Loyane Istefania de Jesus Alves, Elivaldo dos Santos Guimarães.</p>
-
                     <h4>Contato:</h4>
                     <p>(89) 99454-2556 | morganaaaalves@gmail.com</p>
-
                     <h4>Endereço:</h4>
                     <p>Bomba, Picos, Piauí - 64601340</p>
                 </div>
             </div>
         </section>
-
-
-        </section>
     </header>
 
-
-    <!-- Objetivos -->
     <h6 class="titulo-do-projeto"> Objetivos </h6>
     <section class="container">
         <div class="card">
@@ -91,75 +133,210 @@
         </div>
     </section>
 
-</body>
+    <section id="secao-ppe" class="secao-imagem-texto">
+        <h2 class="titulo">PPE - Plano Pessoal de Estudos</h2> 
+        <img class="imagem-secao" 
+             src="ppe novo.png" 
+             alt="Imagem do Plano Pessoal de Estudos" 
+             onclick="window.open('ppe novo.png', '_blank');"
+        />
+    </section>
 
-<section class="historia-section">
-    <div class="historia-container">
-        <h2 class="titulo-historia">História de vida</h2>
-        <p class="texto-historia"> <br><br> Entrei no SESI em 2021 e logo percebi que é uma instituição que valoriza o protagonismo dos alunos, incentivando
-            cada um a construir sua própria trajetória. <br><br>
-            Desde pequena, sempre tive interesse em seguir uma profissão na área da saúde. Hoje, esse desejo permanece
-            vivo, pois pretendo cursar Nutrição na UFPI ou Biomedicina em uma faculdade particular, por meio do Prouni — assim como
-            sou bolsista atualmente no SESI. <br><br>
-            Meu maior objetivo é exercer minha profissão com excelência, oferecendo cuidado e apoio às pessoas. Além
-            disso, desejo conquistar estabilidade financeira e viver uma vida saudável e plena, ao lado daqueles que amo.
-        </p>
+    
+    <section class="projeto">
+        <div class="interface">
+            <h6 class="titulo-do-projeto"> Projeto de vida </h6>
+            <div class="flex">
+                <div class="projeto-box">
+                    <h7> Onde estou?</h7>
+                    <p>Atualmente estou cursando a 3ª série do ensino
+                        médio na
+                        escola Sesi Wilma Catão Araújo. Paralelamente à minha formação escolar, estou também cursando o
+                        curso
+                        técnico em Informática para Internet no Senai, uma oportunidade que me permite aprofundar meus
+                        conhecimentos na área da tecnologia e desenvolver habilidades essenciais para o mercado de
+                        trabalho.</p>
+                </div>
+
+                <div class="projeto-box">
+                    <h7> Onde quero chegar? </h7>
+                    <p>Meu objetivo é me formar em Nutrição na UFPI ou em Biomedicina em uma faculdade particular
+                        através do Prouni com a categoria de bolsista, assim como sou no Sesi. Quero exercer minha profissão com
+                        excelência, ser uma boa profissional com o propósito de cuidar e ajudar as pessoas. Também é
+                        importante
+                        ter um bom salário, para que eu possa ter minha estabilidade financeira e vida saudável com as
+                        pessoas
+                        que amo ao meu lado.</p>
+                </div>
+
+                <div class="projeto-box">
+                    <h7> Como chegarei lá? </h7>
+                    <p>Ao longo do ano, mantenho uma rotina disciplinada de estudos, resolvendo o máximo de questões
+                        possível para consolidar meu aprendizado e reforçar minha preparação para o Enem. Meu objetivo é
+                        absorver todo o conteúdo estudado e alcançar uma excelente nota no exame, ampliando minhas
+                        oportunidades acadêmicas e profissionais.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    
+    <section class="historia-section">
+        <div class="historia-container">
+            <h2 class="titulo-historia">História de vida</h2>
+            <p class="texto-historia"> <br><br> Entrei no SESI em 2021 e logo percebi que é uma instituição que valoriza o protagonismo dos alunos, incentivando
+                cada um a construir sua própria trajetória. <br><br>
+                Desde pequena, sempre tive interesse em seguir uma profissão na área da saúde. Hoje, esse desejo permanece
+                vivo, pois pretendo cursar Nutrição na UFPI ou Biomedicina em uma faculdade particular, por meio do Prouni — assim como
+                sou bolsista atualmente no SESI. <br><br>
+                Meu maior objetivo é exercer minha profissão com excelência, oferecendo cuidado e apoio às pessoas. Além
+                disso, desejo conquistar estabilidade financeira e viver uma vida saudável e plena, ao lado daqueles que amo.
+            </p>
+        </div>
+    </section>
+    
+    
+    <section class="icones-atividades">
+        <h1 class="titulo-escolhido" style="font-family: 'Playfair Display', serif; color: #1a237e; font-size: 36px; margin-bottom: 40px;">Atividades Escolhidas</h1>
+        
+        <div class="icones-lista">
+            <ul>
+                <li>
+                    <a href="linguagens escolhidas.html">
+                        <img src="linguagens.png" alt="Linguagens Icone">
+                        <span>Linguagens</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="humanas escolhidas.html">
+                        <img src="humanas.png" alt="Humanas Icone">
+                        <span>Ciências Humanas</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="natureza escolhidas.html">
+                        <img src="natureza.png" alt="Naturezas Icone">
+                        <span>Ciências da Natureza</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="matematica escolhidas.html">
+                        <img src="matematica.png" alt="Matemática Icone">
+                        <span>Matemática</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="senai escolhidas.html">
+                        <img src="senai.png" alt="Senai Icone">
+                        <span>Téc. Informática p/ Internet</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </section>
+    
+<section id="secao-curriculo" class="secao-imagem-texto">
+        <h2 class="titulo-grande-secao">Currículo</h2>
+        <img class="imagem-secao" src="curriculo novo.png" alt="Imagem do Currículo">
+    </section>
+    
+    <section id="consideracoes-finais" class="historia-section">
+            <img class="imagem-final" src="consideracoes.png" alt="Foto Morgana de Conclusão">
+        </div>
+    </section>
+
+    <main> <h1>Referências</h1>
+
+        <div class="container">
+            <div class="card">
+                <a href="https://www.sesieducacao.com.br/publico/" target="_blank" rel="noopener noreferrer">
+                    <img src="sesii.png" alt="Sesi Educação" />
+                    <span>Portal SESI Educação</span>
+                </a>
+            </div>
+
+            <div class="card">
+                <a href="https://chat.openai.com" target="_blank" rel="noopener noreferrer">
+                    <img src="chat 2.png" alt="ChatGPT" />
+                    <span>ChatGPT</span>
+                </a>
+            </div>
+
+            <div class="card">
+                <a href="https://www.todamateria.com.br" target="_blank" rel="noopener noreferrer">
+                    <img src="toda materia.jpg" alt="Toda Matéria" />
+                    <span>Toda Matéria</span>
+                </a>
+            </div>
+
+            <div class="card">
+                <a href="https://www.professorferretto.com.br/" target="_blank" rel="noopener noreferrer">
+                    <img src="ferreto.png" alt="Professor Ferreto" />
+                    <span>Ferreto</span>
+                </a>
+            </div>
+        </div>
+    </main>
+
+<section id="secao-anexos">
+    <h2 class="titulo-grande-secao">Anexos</h2>
+    
+    <div class="galeria-wrapper">
+        <button class="galeria-btn prev" onclick="mudarSlide(-1)">❮</button> 
+        
+        <div class="galeria-container">
+            <img class="imagem-slide" src="anexos 2.png" alt="Anexo 1">
+            <img class="imagem-slide" src="anexo 1.png" alt="Anexo 2"> 
+            <img class="imagem-slide" src="anexo 22.png" alt="Anexo 3">
+            <img class="imagem-slide" src="anexo 3.png" alt="Anexo 2"> 
+            <img class="imagem-slide" src="anexo 4.png" alt="Anexo 3">
+            <img class="imagem-slide" src="anexo 5.png" alt="Anexo 3">
+        </div>
+        
+        <button class="galeria-btn next" onclick="mudarSlide(1)">❯</button>
     </div>
 </section>
 
+<script>
+    let slideIndex = 0; // Começa na primeira imagem (índice 0)
+    mostrarSlides(slideIndex); // Chama a função para mostrar o primeiro slide
 
+    // Função chamada quando os botões são clicados
+    function mudarSlide(n) {
+        mostrarSlides(slideIndex += n);
+    }
 
-<section class="projeto">
+    // Função que controla a exibição do slide
+    function mostrarSlides(n) {
+        let i;
+        let slides = document.getElementsByClassName("imagem-slide");
 
-    <div class="interface">
+        // Volta para o primeiro slide se passar do último
+        if (n >= slides.length) { 
+            slideIndex = 0; 
+        }
 
-        <h6 class="titulo-do-projeto"> Projeto de vida </h6>
-        <div class="flex">
-            <div class="projeto-box">
+        // Vai para o último slide se voltar do primeiro
+        if (n < 0) {
+            slideIndex = slides.length - 1; 
+        }
 
-                <h7> Onde estou?</h7>
-                <p>Meu nome é Eyvillim Morgana Alves Guimarães e atualmente estou cursando a 3ª série do ensino
-                    médio na
-                    escola Sesi Wilma Catão Araújo. Paralelamente à minha formação escolar, estou também cursando o
-                    curso
-                    técnico em Informática para Internet no Senai, uma oportunidade que me permite aprofundar meus
-                    conhecimentos na área da tecnologia e desenvolver habilidades essenciais para o mercado de
-                    trabalho.</p>
-            </div><!--pjv-box-->
+        // Esconde todos os slides (remove a classe 'visivel')
+        for (i = 0; i < slides.length; i++) {
+            slides[i].classList.remove('visivel');
+        }
 
-            <div class="projeto-box">
-                <h7> Onde quero chegar? </h7>
-                <p>Meu objetivo é me formar em Nutrição na UFPI ou em Biomedicina em uma faculdade particular
-                    através do
-                    Prouni, com a categoria de bolsista, assim como sou no Sesi. Quero exercer minha profissão com
-                    excelência, ser uma boa profissional com o propósito de cuidar e ajudar as pessoas. Também é
-                    importante
-                    ter um bom salário, para que eu possa ter minha estabilidade financeira e vida saudável com as
-                    pessoas
-                    que amo ao meu lado.</p>
-            </div><!--pjv-box-->
+        // Mostra apenas o slide atual (adiciona a classe 'visivel')
+        slides[slideIndex].classList.add('visivel');
+    }
+</script>
 
-            <div class="projeto-box">
-                <h7> Como chegarei lá? </h7>
-                <p>Ao longo do ano, mantenho uma rotina disciplinada de estudos, resolvendo o máximo de questões
-                    possível para consolidar meu aprendizado e reforçar minha preparação para o Enem. Meu objetivo é
-                    absorver todo o conteúdo estudado e alcançar uma excelente nota no exame, ampliando minhas
-                    oportunidades acadêmicas e profissionais.</p>
-            </div><!--pjv-box-->
-        </div><!--pjv-box-->
+    <footer class="social-footer">
+        <p>&copy; 2025 <a href="https://github.com/eyvillimmorgana">eyvillimguimaraes</a>.<br>
+            Orientada por Cleiton Leal Jericó<br>
+        </p>
+    </footer>
 
-    </div><!--flex-->
-    </div><!--interface-->
-
-</section><!--projeto-de-vida-->
-
-
-<footer class="social-footer">
-    <p>&copy; 2025 <a href="https://github.com/eyvillimmorgana">eyvillimguimaraes</a>.<br>
-        Orientada por Cleiton Leal Jericó<br>
-    </p>
-</footer>
-</div>
 </body>
 
 </html>

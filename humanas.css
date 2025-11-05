@@ -1,0 +1,180 @@
+
+/* -------------------------------------- */
+/* 1. Variáveis e Reset */
+/* -------------------------------------- */
+:root {
+--cor-principal: hsl(150, 70%, 20%); /* Verde Esmeralda Escuro (Fundo) */
+--cor-secundaria: hsl(50, 90%, 65%); /* Ouro / Amarelo Brilhante (Destaque) */
+--cor-texto-claro: #FFFFFF;
+--cor-fundo-card: #F8F8F8; /* Branco Sujo / Off-White */
+--cor-sombra-esmeralda: 0 0 15px hsla(150, 70%, 20%, 0.5);
+}
+
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+
+/* -------------------------------------- */
+/* 2. Body e Título (H1) */
+/* -------------------------------------- */
+body {
+margin: 0;
+padding: 40px 0; /* Aumentei o padding vertical */
+font-family: 'Roboto', sans-serif; /* Usando Roboto, mas você pode mudar para a fonte que quiser */
+background-color: var(--cor-principal);
+display: flex;
+justify-content: center;
+align-items: center;
+flex-direction: column;
+min-height: 100vh;
+color: var(--cor-texto-claro);
+}
+
+h1 {
+/* Inverti a cor do H1: cor-secundaria como fundo */
+background-color: var(--cor-secundaria);
+color: var(--cor-principal); /* Texto em Esmeralda escuro */
+padding: 20px 50px;
+border-radius: 12px;
+font-size: 2.5rem; /* Levemente menor que o original */
+font-weight: 700;
+box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4); /* Sombra mais forte */
+margin-bottom: 40px;
+text-align: center;
+text-transform: uppercase;
+letter-spacing: 2px;
+}
+
+/* -------------------------------------- */
+/* 3. Galeria e Atividades (Cards) */
+/* -------------------------------------- */
+.galeria {
+display: flex;
+justify-content: center;
+gap: 35px; /* Aumentei o gap */
+margin-bottom: 70px;
+flex-wrap: wrap;
+max-width: 1300px;
+}
+
+.atividade {
+background: var(--cor-fundo-card);
+border-radius: 10px; /* Borda mais suave */
+box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+overflow: hidden;
+width: 260px; /* Levemente maior */
+cursor: pointer;
+transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+border: 4px solid var(--cor-principal); /* Borda Esmeralda */
+}
+
+.atividade:hover {
+/* Destaque no hover com o Ouro */
+box-shadow: 0 8px 25px hsla(50, 90%, 65%, 0.6);
+transform: translateY(-8px); /* Elevação maior */
+}
+
+.atividade.selecionada {
+/* Destaque Ouro ao ser selecionada */
+border-color: var(--cor-secundaria); 
+box-shadow: 0 0 20px var(--cor-secundaria); 
+transform: scale(1.07);
+}
+
+.atividade img {
+width: 100%;
+height: 200px; /* Altura definida para consistência */
+object-fit: cover;
+display: block;
+border-radius: 6px;
+}
+
+/* -------------------------------------- */
+/* 4. Carrossel */
+/* -------------------------------------- */
+#carousel-wrapper {
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+gap: 30px;
+margin-top: 50px;
+padding: 40px;
+border-radius: 20px;
+/* COR SÓLIDA para dar mais destaque ao carrossel */
+background: var(--cor-principal); 
+border: 2px solid var(--cor-secundaria);
+box-shadow: 0 0 40px var(--cor-secundaria);
+max-width: 600px;
+width: 90%;
+}
+
+#carousel-title {
+font-family: 'Poppins', sans-serif;
+font-weight: 600;
+font-size: 1.8rem;
+color: var(--cor-secundaria); /* Título em Ouro */
+margin: 0;
+text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
+}
+
+.carousel-controls {
+display: flex;
+align-items: center;
+gap: 25px;
+}
+
+#carousel-img {
+width: 300px;
+height: 450px;
+object-fit: cover;
+border-radius: 10px;
+box-shadow: 0 10px 20px rgba(0, 0, 0, 0.7);
+border: 6px solid var(--cor-texto-claro); /* Borda branca forte */
+}
+
+.carousel-btn {
+background: none;
+color: var(--cor-secundaria); /* Setas em Ouro */
+border: none;
+font-size: 4rem; /* Maior e mais impactante */
+font-weight: 300;
+cursor: pointer;
+padding: 0 10px;
+transition: color 0.3s ease, transform 0.2s;
+}
+
+.carousel-btn:hover {
+color: var(--cor-texto-claro);
+transform: scale(1.15);
+}
+
+/* -------------------------------------- */
+/* 5. Responsividade */
+/* -------------------------------------- */
+@media (max-width: 768px) {
+h1 {
+font-size: 2rem;
+padding: 15px 30px;
+}
+
+.galeria {
+gap: 20px;
+}
+
+.atividade {
+width: 45%;
+max-width: 180px;
+}
+
+#carousel-img {
+width: 250px;
+height: 375px;
+}
+
+.carousel-btn {
+font-size: 3rem;
+}
+}

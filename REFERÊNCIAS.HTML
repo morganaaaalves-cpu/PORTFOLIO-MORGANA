@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Referências e Atividades</title>
+
+    <>
+        /*
+         * Estrutura Geométrica (Quadrada)
+         * Paleta: Azul e Branco (Alto Contraste)
+         */
+
+        /* Variáveis para facilitar a leitura */
+        :root {
+            --clr-dark-blue: hsl(211, 95%, 37%); /* Azul Escuro (Cor principal) */
+            --clr-light-blue: hsl(211, 95%, 37%); /* Azul Claro (Destaque/Hover) */
+            --clr-white: white;
+            --clr-shadow: rgba(0, 0, 0, 0.15);
+        }
+
+        /* Importação das fontes */
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&family=Playfair+Display:wght@400;700&display=swap');
+
+        /* Reset global */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html,
+        body {
+            margin: 0;
+            * ÍCONES DE ATIVIDADES */
+.icones-referencias {
+    width: 90%;
+    max-width: 1200px;
+    margin: 80px auto; 
+    text-align: center;
+}
+
+.icones-referencias .titulo-escolhido {
+    color: var(--texto-principal); 
+    font-size: 48px; 
+    margin-top: -65px;
+    margin-bottom: 40px;
+}
+
+.icones-referenciass ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 40px; 
+    
+}
+
+.icones-referencias li {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.icones-referencias li:hover {
+    transform: translateY(-10px);
+}
+
+.icones-referencias a {
+    text-decoration: none; 
+    color: var(--azul-roxo-principal); 
+    font-weight: bold;
+}
+
+.icones-referencias img {
+    width: 150px; 
+    height: 150px;
+    object-fit: cover;
+    display: block;
+    border-radius: 50%;
+    box-shadow: 0 0 0 5px var(--rosa-principal); /* Efeito de borda dupla */
+    border: 5px solid var(--azul-roxo-principal);
+}
+
+.icones-referencias span {
+    margin-top: 55px;
+    font-size: 20px;
+    font-weight: 700;
+    font-family: 'Quicksand', sans-serif;
+    text-transform: uppercase;
+}
+
+        /* --- Animação (Adicionado) --- */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <main> <h1>REFERÊNCIAS</h1>
+
+        <div class="container">
+            <div class="card">
+                <a href="https://www.sesieducacao.com.br/publico/" target="_blank" rel="noopener noreferrer">
+                    <img src="sesii.png" alt="Sesi Educação" />
+                    <span>Portal SESI Educação</span>
+                </a>
+            </div>
+
+            <div class="card">
+                <a href="https://chat.openai.com" target="_blank" rel="noopener noreferrer">
+                    <img src="chat 2.png" alt="ChatGPT" />
+                    <span>ChatGPT</span>
+                </a>
+            </div>
+
+            <div class="card">
+                <a href="https://www.todamateria.com.br" target="_blank" rel="noopener noreferrer">
+                    <img src="toda materia.jpg" alt="Toda Matéria" />
+                    <span>Toda Matéria</span>
+                </a>
+            </div>
+
+            <div class="card">
+                <a href="https://mundoeducacao.uol.com.br" target="_blank" rel="noopener noreferrer">
+                    <img src="mundo educação.jpg" alt="Mundo Educação" />
+                    <span>Mundo Educação</span>
+                </a>
+            </div>
+
+            <div class="card">
+                <a href="https://www.professorferretto.com.br/" target="_blank" rel="noopener noreferrer">
+                    <img src="ferreto.png" alt="Professor Ferreto" />
+                    <span>Professor Ferreto</span>
+                </a>
+            </div>
+        </div>
+    </main>
+</body>
+
+</html>

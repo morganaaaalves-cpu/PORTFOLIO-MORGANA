@@ -1,60 +1,94 @@
+/* ========================================================================= */
+/* 1. VARIÁVEIS DE COR E FONTES (ROOT) */
+/* ========================================================================= */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Quicksand:wght@300;400;500;700&display=swap');
 
-/* Base */
+:root {
+    /* COR DE FUNDO PRINCIPAL: Marfim Suave */
+    --fundo-principal: #fffff0; 
+    /* COR DE DESTAQUE: Rosa Magenta */
+    --rosa-principal: #d81b8f; 
+    /* COR DE Fundo/Texto Secundário: Azul-Roxo Escuro */
+    --azul-roxo-principal: #5c51bd; 
+    /* Cor de Texto Principal */
+    --texto-principal: #5c51bd; 
+    /* Cor de Hover/Ação (Variação mais clara do destaque) */
+    --rosa-claro: #e34db0; 
+    /* Cor de Texto para Contraste */
+    --texto-branco: white;
+    /* Cor para títulos grandes */
+    --azul-escuro: #1a237e; 
+}
+
+
+/* ========================================================================= */
+/* 2. BASE, BODY E TÍTULOS GLOBAIS */
+/* ========================================================================= */
 body {
-    color:white;
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    background-color: var(--fundo-principal); 
+    color: var(--texto-principal); 
+    font-family: 'Quicksand', sans-serif;
     justify-content: center;
     padding-top: 50px;
-}
-
-/* Títulos globais */
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-.titulo-do-objetivo {
-    color: var(--rosa-principal);
-}
-
-/* Navegação */
-ul {
+    margin: 0;
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
+    align-items: center;
+}
+
+h1, h2, h3, h4, h5, h6, .titulo-do-objetivo {
+    color: var(--rosa-principal);
+    font-family: 'Playfair Display', serif;
+}
+
+/* Títulos Específicos */
+h1 { font-size: 150px; margin-left: 20px; text-align: center; }
+h2 { font-size: 200px; margin-top: -160px; text-align: center; }
+h3 { font-size: 20px; margin-top: -200px; text-align: center; }
+h5 { font-size: 50px; text-align: left; margin-top: -85px; padding: 0 4%; color: var(--rosa-principal); }
+h6 { font-size: 15px; margin-top: 10px; margin-bottom: 6px; color: var(--rosa-principal); line-height: 1.2; }
+h7 { font-size: 18px; margin-top: 10px; margin-bottom: 6px; font-weight: bold; color: var(--texto-principal); }
+
+/* Título de Seção Grande (Usado em Curriculo, Anexos e PPE, dependendo do HTML) */
+.titulo-grande-secao {
+    font-family: 'Playfair Display', serif;
+    font-size: 48px;
+    color: var(--azul-escuro); 
+    text-align: center;
+    margin-bottom: 50px;
+    margin-top: 100px;
+}
+
+/* ========================================================================= */
+/* 3. NAVEGAÇÃO E BOTÕES (NAV) */
+/* ========================================================================= */
+nav {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    background-color: var(--fundo-principal);
+    padding: 10px 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
     list-style-type: none;
     align-items: center;
-    padding: 16px;
+    padding: 0;
+    margin: 0;
 }
 
-header a {
-    color: var(--rosa-principal);
-    text-decoration: none;
+nav ul li {
+    margin: 0 10px;
 }
 
-header nav ul {
-    list-style-type: none;
-}
-
-header nav ul li {
-    display: inline-block;
-    margin-right: 40px;
-}
-
-header .btn-ppe button {
-    padding: 10px 40px;
-    font-size: 18px;
-    font-weight: 600;
-    background-color: var(--rosa-principal);
-    border: 0;
-    border-radius: 30px;
-    cursor: pointer;
-}
-
-/* Botões */
 .botao {
-    background-color: hsl(211, 95%, 37%);
-    color: var(--texto-branco);
+    background-color: var(--azul-roxo-principal); 
+    color: var(--texto-branco); 
     padding: 10px 20px;
     border: none;
     border-radius: 20px;
@@ -63,12 +97,26 @@ header .btn-ppe button {
     display: inline-block;
     text-decoration: none;
     transition: background-color 0.3s ease;
-    margin: 5px;
-    margin-top: -100px;
+    margin: 0;
 }
 
-.botao:hover,
-.botao:active {
+.botao:hover, .botao:active {
+    background-color: var(--rosa-claro);
+}
+
+.botao-secundario {
+    background-color: var(--rosa-principal);
+    color: var(--texto-branco);
+    padding: 12px 25px;
+    border-radius: 25px;
+    font-weight: bold;
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 30px;
+    transition: background-color 0.3s ease;
+}
+
+.botao-secundario:hover {
     background-color: var(--rosa-claro);
 }
 
@@ -76,57 +124,25 @@ header .btn-ppe button {
     transform: scale(0.98);
 }
 
-/* Títulos */
-h1 {
-    font-size: 150px;
-    margin-left: 20px;
-    text-align: center;
-}
 
-h2 {
-    font-size: 200px;
-    margin-top: -160px;
-    text-align: center;
-}
-
-h3 {
-    font-size: 20px;
-    margin-top: -200px;
-    text-align: center;
-}
-
-h5 {
+/* ========================================================================= */
+/* 4. SEÇÃO DE IDENTIFICAÇÃO PESSOAL (HEADER / #sobre) */
+/* ========================================================================= */
+.titulo-identificacao {
     font-size: 50px;
-    text-align: left;
-    margin-top: -85px;
-    padding: 0 4%;
-    color: var(--rosa-principal);
+    color: var(--rosa-principal); 
+    text-align: center;
+    margin-top: 60px;
+    margin-bottom: -40px;
 }
 
-h6 {
-    font-size: 15px;
-    margin-top: 10px;
-    margin-bottom: 6px;
-    color: var(--rosa-principal);
-    line-height: 1.2;
-}
-
-h7 {
-    font-size: 18px;
-    margin-top: 10px;
-    margin-bottom: 6px;
-    font-weight: bold;
-    /* 🔹 deixa em negrito */
-}
-
-/* Caixa de Identificação */
 .box-identificação {
-    background-color: #004a98;
+    background-color: var(--azul-roxo-principal); 
     padding: 20px;
     border-radius: 16px;
-    color: var(--rosa-principal);
+    color: var(--texto-branco); 
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); 
     width: 85%;
     max-width: 1000px;
     margin: 70px auto 0;
@@ -134,34 +150,26 @@ h7 {
 
 .box-identificação:hover {
     transform: scale(1.02);
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
-}
-
-.titulo-identificacao {
-    font-size: 50px;
-    color: var(--rosa-principal);
-    text-align: center;
-    margin-top: 150px;
-    margin-bottom: 40px;
+    box-shadow: 0 8px 25px rgba(216, 27, 143, 0.4); 
 }
 
 .box-identificação h4 {
     font-size: 24px;
     margin-top: 5px;
     margin-bottom: 2px;
-    color: var(--rosa-principal);
+    color: var(--rosa-principal); 
     line-height: 1.2;
 }
 
 .box-identificação p {
     font-size: 20px;
     margin: 0 0 10px;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Quicksand', sans-serif;
     text-align: left;
     line-height: 1.4;
+    color: var(--texto-branco);
 }
 
-/* Layout horizontal com imagem */
 .box-identificação-horizontal {
     display: flex;
     align-items: center;
@@ -170,9 +178,10 @@ h7 {
 }
 
 .foto-morgana {
+    /* IMAGEM: FOTO DE PERFIL */
     width: 220px;
     height: 280px;
-    object-fit: cover;
+    object-fit: cover; /* Recorta, mas preenche o espaço */
     border-radius: 12px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
@@ -181,69 +190,36 @@ h7 {
     flex: 1;
 }
 
-/* Imagem redonda */
-.identificação-foto {
-    float: right;
-    clear: both;
-    width: 400px;
-    height: 400px;
-    border: 2px solid var(--rosa-principal);
-    border-radius: 50%;
-}
-
-/* Texto extra */
-.texto-destaque {
-    text-align: center;
-    font-size: 35px;
-    background-color: var(--rosa-principal);
-    color: white;
-    padding: 6px 12px;
-    display: inline-block;
-    border-radius: 5px;
-    margin: 40px auto;
-}
-
-/* Parágrafo estilizado */
-.paragrafo-estilizado {
-    color: var(--rosa-principal);
-    font-family: 'Georgia', serif;
-    font-size: 18px;
-    font-weight: 600;
-    line-height: 1.6;
-    text-align: justify;
-    letter-spacing: 0.5px;
-    text-shadow: 1px 1px 2px hsl(211, 100%, 30%);
-}
-
-body {
-    font-family: Arial, sans-serif;
-    background-color: #004a98;
-    margin: 0;
-    padding: 20px;
-}
-
+/* ========================================================================= */
+/* 5. SEÇÃO OBJETIVOS (H6 / .container) */
+/* ========================================================================= */
 .titulo-do-projeto {
     text-align: center;
-    color: white;
+    color: var(--rosa-principal); 
     margin-bottom: 40px;
+    font-family: 'Playfair Display', serif;
+    font-size: 40px;
 }
 
 .container {
+    /* Usado para Objetivos e Referências */
     display: flex;
     justify-content: center;
-    gap: 30px;
+    gap: 30px; 
     flex-wrap: wrap;
+    padding: 0 20px 80px; /* Adicionado padding para Referências */
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .card {
-    width: 250px;
-    background-color: hsl(211, 95%, 37%);
-    border-radius: 15px;
-    padding: 20px;
-    /* Increased padding for better spacing */
-    box-shadow: white;
-    color: #ffffff;
-    /* Default color for text */
+    /* Usado para Objetivos e Referências */
+    width: 200px; 
+    padding: 30px; 
+    background-color: var(--azul-roxo-principal); 
+    border-radius: 10px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15); 
+    color: var(--rosa-principal);
     cursor: pointer;
     transition: all 0.3s ease;
     overflow: hidden;
@@ -252,98 +228,111 @@ body {
 }
 
 .card:hover {
-    box-shadow: 0 5px 15px white;;
+    box-shadow: 0 5px 15px var(--rosa-principal); 
     transform: translateY(-5px);
-    /* Adds a slight lift effect */
 }
-
-/* --- */
 
 .card .title {
     font-weight: bold;
-    font-size: 1.2em;
-    /* Use relative units for better scalability */
-    margin-bottom: 10px;
-    color: white;;
-    /* Title color stands out */
+    font-size: 1.1em; 
+    margin-bottom: 8px; 
+    color: var(--rosa-principal);
+    font-family: 'Playfair Display', serif;
 }
 
 .card .content {
-    font-size: 1em;
+    font-size: 0.9em; 
     opacity: 0;
     transition: opacity 0.3s ease;
-    margin-top: 10px;
+    margin-top: 5px; 
+    color:var(--rosa-principal);
 }
 
 .card:hover .content {
     opacity: 1;
 }
 
-/* Fonte romântica e leve */
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Quicksand:wght@400;600&display=swap');
 
-/* Seção principal da história */
-.historia-section {
-    background: hsl(211, 100%, 30%);
-    padding: 100px 20px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    overflow: hidden;
-    z-index: 1;
+/* ========================================================================= */
+/* 6. SEÇÃO PLANO PESSOAL DE ESTUDOS (#secao-ppe) e CURRÍCULO (#secao-curriculo) */
+/* ========================================================================= */
+.secao-imagem-texto {
+    text-align: center; 
+    margin-top: -70px; 
+    margin-bottom: 50px;
+    width: 90%; 
+    max-width: 1500px; 
+    margin-left: auto;
+    margin-right: auto;
 }
 
-.historia-container {
-    background: hsl(211, 95%, 37%);
-    backdrop-filter: blur(15px);
-    border-radius: 30px;
-    padding: 80px 40px 60px;
-    max-width: 900px;
-    width: 100%;
-    box-shadow: 0 8px 30px var(--rosa-principal);
-    position: relative;
-    z-index: 2;
+.titulo {
+    /* CORREÇÃO: Removida a margem negativa excessiva */
+    margin-top: 0;
+    margin-left: auto;
+    margin-right: auto;
     text-align: center;
-}
-
-.titulo-historia {
+    color: var(--rosa-principal); 
+    margin-bottom: 30px; 
     font-family: 'Playfair Display', serif;
-    font-size: 48px;
-    color: white;
-    margin-bottom: 30px;
-    font-weight: bold;
-    text-shadow: 1px 1px 2px hsl(211, 100%, 30%);
-    text-align: center;
+    font-size: 40px;
+    width: 100%; 
 }
 
-/* Texto da história — sem recuo de parágrafo */
-.texto-historia {
-    font-family: 'Quicksand', sans-serif;
-    font-size: 20px;
-    color: white;
-    line-height: 1.8;
-    text-align: justify;
-    margin-top: 50px;
+.imagem-secao {
+    /* IMAGEM: PPE / CURRÍCULO */
+    max-width: 100%; 
+    height: auto; 
+    /* CORREÇÃO: Garante que a imagem inteira apareça (ideal para documentos) */
+    object-fit: contain; 
+    width: 100%; 
+    
+    margin-left: auto;
+    margin-right: auto;
+    display: block; 
+    
+    border-radius: 0;
+    box-shadow: none;
+    cursor: pointer;
+    
+    margin-top: 0; 
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Seção Projetos */
+.imagem-secao:hover {
+    transform: translateY(-5px); 
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2); 
+}
+
+
+/* ========================================================================= */
+/* 7. SEÇÃO PROJETO DE VIDA (.projeto) */
+/* ========================================================================= */
 .projeto {
-    padding: 40px 4%;
-    margin-top: -70px;
+    padding: 50px 4%;
+    margin-top: -50px;
 }
 
 .flex {
     display: flex;
     gap: 80px;
+    justify-content: center;
+    flex-wrap: wrap;
 }
 
 .projeto .projeto-box {
-    color: var(--rosa-principal);
-    padding: 80px;
+    color: var(--rosa-principal); 
+    padding: 20px;
     border-radius: 20px;
     transition: 0.2s;
-    background-color: hsl(211, 95%, 37%);
+    background-color: white; 
+    flex: 1 1 300px;
+    max-width: 350px;
+}
+
+.projeto .projeto-box p {
+    color: var(--rosa-principal);
+    font-family: 'Quicksand', sans-serif;
 }
 
 .projeto .projeto-box:hover {
@@ -351,19 +340,384 @@ body {
     box-shadow: 0 0 8px var(--rosa-principal);
 }
 
-.titulo-do-projeto {
-    font-size: 50px;
-    margin: 30px 0 70px 0;
-    text-align: center;
-    color: var(--rosa-principal);
+
+/* ========================================================================= */
+/* 8. SEÇÃO HISTÓRIA DE VIDA (.historia-section) */
+/* ========================================================================= */
+.historia-section {
+    padding: 100px 20px;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    z-index: 1;
+    width: 100%;
 }
 
-/* Rodapé */
-footer {
-    background-color: hsl(211, 100%, 30%);
-    color: white;
+.historia-container {
+    background: var(--azul-roxo-principal); 
+    backdrop-filter: blur(15px);
+    border-radius: 30px;
+    padding: 80px 40px 60px;
+    max-width: 900px;
+    width: 100%;
+    box-shadow: 0 8px 30px rgba(216, 27, 143, 0.5); 
     text-align: center;
-    padding: 0.5rem;
+}
+
+.titulo-historia {
+    color: var(--rosa-principal); 
+    text-align: center;
+    margin-bottom: 40px;
+    font-family: 'Playfair Display', serif;
+    font-size: 40px;
+}
+
+.texto-historia {
+    font-family: 'Quicksand', sans-serif;
+    font-size: 20px;
+    color: var(--texto-branco); 
+    height: 100%;
+    line-height: 1.8;
+    text-align: justify;
+    margin-top: 50px;
+}
+
+
+/* ========================================================================= */
+/* 9. SEÇÃO ATIVIDADES ESCOLHIDAS (.icones-atividades) */
+/* ========================================================================= */
+.icones-atividades {
+    width: 90%;
+    max-width: 1200px;
+    margin: 80px auto; 
+    text-align: center;
+}
+
+.icones-atividades .titulo-escolhido {
+    color: var(--texto-principal); 
+    font-size: 48px; 
+    margin-top: -65px;
+    margin-bottom: 40px;
+}
+
+.icones-atividades ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 40px; 
+    
+}
+
+.icones-atividades li {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.icones-atividades li:hover {
+    transform: translateY(-10px);
+}
+
+.icones-atividades a {
+    text-decoration: none; 
+    color: var(--azul-roxo-principal); 
+    font-weight: bold;
+}
+
+.icones-atividades img {
+    /* IMAGEM: ÍCONES DE ATIVIDADES */
+    width: 150px; 
+    height: 150px;
+    /* Ideal para ícones: preenche o círculo sem distorcer, cortando o excesso */
+    object-fit: cover;
+    display: block;
+    border-radius: 40%;
+    box-shadow: 0 0 0 5px var(--rosa-principal); 
+    border: 5px solid var(--azul-roxo-principal);
+}
+
+.icones-atividades span {
+    margin-top: 55px;
+    font-size: 20px;
+    font-weight: 700;
+    font-family: 'Quicksand', sans-serif;
+    text-transform: uppercase;
+}
+
+
+/* ========================================================================= */
+/* 10. SEÇÃO CONSIDERAÇÕES FINAIS (#consideracoes-finais) */
+/* ========================================================================= */
+.titulo-consideracoes-finais {
+    font-family: 'Playfair Display', serif;
+    color: var(--azul-roxo-principal); 
+}
+
+.imagem-final {
+    /* IMAGEM: CONSIDERAÇÕES FINAIS */
+    border: 5px solid var(--rosa-principal);
+    max-width: 100%;
+    height: auto; 
+    /* CORREÇÃO: Garante que a imagem inteira apareça */
+    object-fit: contain; 
+    width: 65%; 
+    display: block; 
+    margin: 0 auto; 
+    border-radius: 8px; 
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+} 
+
+
+/* ========================================================================= */
+/* 11. REFERÊNCIAS (MAIN) */
+/* ========================================================================= */
+/* 1. SEÇÃO REFERÊNCIAS: AJUSTE DE FUNDO E TÍTULO */
+/* ========================================================================= */
+main {
+    /* Fundo da página (marfim suave) */
+    background-color: var(--fundo-principal);
+    padding-top: 50px; 
+    padding-bottom: 50px;
+}
+
+main h1 {
+    font-family: 'Playfair Display', serif;
+    /* Título na cor principal rosa */
+    color: var(--rosa-principal); 
+    font-size: 40px;
+    text-align: center;
+    padding-top: 60px;
+    margin-bottom: 50px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+/* ========================================================================= */
+/* 2. AJUSTE NOS CARDS: TRANSPARENTES, FOCO NA IMAGEM E TEXTO */
+/* ========================================================================= */
+/* ========================================================================= */
+/* 2. AJUSTES NO CONTAINER E CARDS PARA FORÇAR A MESMA LINHA */
+/* ========================================================================= */
+
+.container {
+    display: flex;
+    justify-content: center;
+    gap: 30px; 
+    /* CORREÇÃO CRUCIAL: Impede a quebra de linha para forçar tudo em uma única linha */
+    flex-wrap: nowrap; 
+    
+    padding: 0 20px 80px; 
+    /* Aumentado o max-width para acomodar todos os cards e o gap */
+    max-width: 1500px; /* Garante que haja espaço */
+    margin: 0 auto;
+    
+    /* Permite a barra de rolagem horizontal se necessário */
+    overflow-x: auto; 
+    -webkit-overflow-scrolling: touch; 
+}
+
+.card {
+    /* ... (outros estilos de card transparentes) ... */
+    
+    /* CORREÇÃO: Define uma largura MÍNIMA para cada card */
+    min-width: 220px; 
+    width: 220px; 
+    
+    background-color: transparent; 
+    box-shadow: none;
+    border: none;
+    padding: 15px; 
+    border-radius: 12px;
+    text-align: center;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    
+    /* GARANTIA: Define o flex-shrink como 0 para impedir que os cards encolham */
+    flex-shrink: 0; 
+}
+
+.card:hover {
+    transform: translateY(-5px); 
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); 
+    border-color: transparent;
+}
+
+/* O restante do CSS da seção Referências não precisa de alterações. */
+
+.card a {
+    text-decoration: none;
+    color: var(--azul-roxo-principal); 
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0; /* Ajustado o padding */
+    height: 100%;
+    box-sizing: border-box;
+}
+
+.card img {
+    /* IMAGEM: REFERÊNCIAS (Bordas redondas já estavam ativas com border-radius: 50%;) */
+    width: 100px; 
+    height: 100px;
+    object-fit: contain; 
+    margin-bottom: 15px;
+    border-radius: 50%; /* Mantém a imagem em formato de círculo */
+    padding: 5px;
+    border: 2px solid var(--rosa-principal); 
+}
+
+.card span {
+    font-family: 'Quicksand', sans-serif;
+    font-size: 1.1em;
+    font-weight: 700;
+    display: block;
+    padding: 0 5px;
+    line-height: 1.2;
+}
+
+/* ========================================================================= */
+/* 12. SEÇÃO ANEXOS (#secao-anexos) - GALERIA */
+/* ========================================================================= */
+#secao-anexos {
+    text-align: center;
+    margin-top: -150px; 
+    margin-bottom: 80px;
+    /* Aumentada a largura do contêiner da galeria */
+    width: 60%; 
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative; 
+}
+
+.galeria-wrapper {
+    position: relative;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    margin: 0 auto;
+    width: 100%;
+}
+
+.galeria-container {
+    width: 100%;
+    position: relative;
+}
+
+.imagem-slide {
+    /* IMAGEM: SLIDES DE ANEXOS */
+    max-width: 100%; 
+    height: auto; 
+    /* CORREÇÃO: Garante que a imagem inteira seja exibida no slide */
+    object-fit: contain; 
+    width: 100%; 
+    display: block; 
+    margin: 0 auto; 
+    border-radius: 8px; 
+    transition: opacity 0.5s ease;
+    /* Escondido por padrão, exibido via JS com classe .visivel */
+    display: none; 
+}
+
+.imagem-slide.visivel {
+    display: block;
+}
+
+/* Estilização dos Botões de Navegação (Ícones) */
+.galeria-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(92, 81, 189, 0.8); 
+    color: var(--texto-branco);
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    z-index: 10; 
+    font-size: 24px;
+    line-height: 1;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    border-radius: 50%; 
+}
+
+.galeria-btn:hover {
+    background-color: var(--rosa-principal); 
+    transform: translateY(-50%) scale(1.1);
+}
+
+.galeria-btn.prev { left: 10px; }
+.galeria-btn.next { right: 10px; }
+
+
+/* ========================================================================= */
+/* 13. RODAPÉ (FOOTER) */
+/* ========================================================================= */
+footer {
+    background-color: var(--azul-roxo-principal); 
+    color: var(--texto-branco);
+    text-align: center;
+    padding: 1rem;
     font-size: 0.95rem;
     margin-top: 4rem;
+    font-family: 'Quicksand', sans-serif;
+    width: 100%;
+}
+
+
+/* ========================================================================= */
+/* 14. MEDIA QUERIES PARA RESPONSIVIDADE */
+/* ========================================================================= */
+@media (max-width: 768px) {
+    /* Ajustes Gerais */
+    .titulo-grande-secao { font-size: 36px; }
+    .historia-section, .secao-imagem-texto, .icones-atividades { padding: 40px 15px; }
+    .titulo-historia { font-size: 26px; }
+    main h1 { font-size: 32px; }
+
+    /* Identificação Pessoal */
+    .box-identificação { width: 95%; }
+    .box-identificação-horizontal { justify-content: center; }
+    .foto-morgana { width: 150px; height: 200px; }
+    .box-identificação h4 { font-size: 20px; }
+    .box-identificação p { font-size: 16px; }
+
+    /* Cards e Projetos */
+    .card { width: 150px; }
+    .card img { width: 100px; height: 100px; }
+    .flex { gap: 30px; }
+    .projeto .projeto-box { max-width: 100%; }
+
+    /* Ícones de Atividades */
+    .icones-atividades .titulo-escolhido { font-size: 28px; }
+    .icones-atividades ul { gap: 20px; }
+    .icones-atividades li { flex-basis: 120px; }
+    .icones-atividades img { width: 100px; height: 100px; }
+    .icones-atividades span { font-size: 16px; margin-top: 15px; }
+}
+
+@media (max-width: 480px) {
+    /* Ajustes de Títulos */
+    h1 { font-size: 80px; }
+    h2 { font-size: 100px; margin-top: -80px; }
+    h3 { font-size: 14px; margin-top: -100px; }
+
+    /* Cards e Referências */
+    .card { width: 45%; min-width: 130px; }
+    .card span { font-size: 1em; }
+
+    /* Ícones de Atividades */
+    .icones-atividades ul { justify-content: space-around; }
+    .icones-atividades li { flex-basis: 45%; }
+    .icones-atividades img { width: 80px; height: 80px; }
+
+    /* Galeria de Anexos */
+    #secao-anexos { width: 90%; }
+    .galeria-btn { font-size: 18px; padding: 8px 12px; }
 }

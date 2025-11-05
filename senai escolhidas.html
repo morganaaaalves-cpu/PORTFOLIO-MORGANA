@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Linguagens - Atividades</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+#secao-linguagens-escolhidas {
+    text-align: center;
+    margin-top: 100px; 
+    margin-bottom: 80px;
+    /* Aumentada a largura do contêiner da galeria */
+    width: 60%; 
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative; 
+}
+
+.galeria-wrapper {
+    position: relative;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    margin: 0 auto;
+    width: 100%;
+}
+
+.galeria-container {
+    width: 100%;
+    position: relative;
+}
+
+.imagem-slide {
+    /* IMAGEM: SLIDES DE ANEXOS */
+    max-width: 100%; 
+    height: auto; 
+    /* CORREÇÃO: Garante que a imagem inteira seja exibida no slide */
+    object-fit: contain; 
+    width: 100%; 
+    display: block; 
+    margin: 0 auto; 
+    border-radius: 8px; 
+    transition: opacity 0.5s ease;
+    /* Escondido por padrão, exibido via JS com classe .visivel */
+    display: none; 
+}
+
+.imagem-slide.visivel {
+    display: block;
+}
+
+/* Estilização dos Botões de Navegação (Ícones) */
+.galeria-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(92, 81, 189, 0.8); 
+    color: var(--texto-branco);
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    z-index: 10; 
+    font-size: 24px;
+    line-height: 1;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    border-radius: 50%; 
+}
+
+.galeria-btn:hover {
+    background-color: var(--rosa-principal); 
+    transform: translateY(-50%) scale(1.1);
+}
+
+.galeria-btn.prev { left: 10px; }
+.galeria-btn.next { right: 10px; }
+
+
+  </style>
+</head>
+<body>
+
+<section id="secao-linguagens-escolhidas">
+    <h2 class="titulo-grande-secao">Téc. Informática p/ Internet - Escolhidas</h2>
+    
+    <div class="galeria-wrapper">
+        <button class="galeria-btn prev" onclick="mudarSlide(-1)">❮</button> 
+        
+        <div class="galeria-container">
+            <img class="imagem-slide" src="anexos 2.png" alt="Anexo 1">
+            <img class="imagem-slide" src="consideracoes.png" alt="Anexo 2"> 
+            <img class="imagem-slide" src="anexos-tres.png" alt="Anexo 3">
+            </div>
+        
+        <button class="galeria-btn next" onclick="mudarSlide(1)">❯</button>
+    </div>
+</section>
+
+<script>
+    let slideIndex = 0; // Começa na primeira imagem (índice 0)
+    mostrarSlides(slideIndex); // Chama a função para mostrar o primeiro slide
+
+    // Função chamada quando os botões são clicados
+    function mudarSlide(n) {
+        mostrarSlides(slideIndex += n);
+    }
+
+    // Função que controla a exibição do slide
+    function mostrarSlides(n) {
+        let i;
+        let slides = document.getElementsByClassName("imagem-slide");
+
+        // Volta para o primeiro slide se passar do último
+        if (n >= slides.length) { 
+            slideIndex = 0; 
+        }
+
+        // Vai para o último slide se voltar do primeiro
+        if (n < 0) {
+            slideIndex = slides.length - 1; 
+        }
+
+        // Esconde todos os slides (remove a classe 'visivel')
+        for (i = 0; i < slides.length; i++) {
+            slides[i].classList.remove('visivel');
+        }
+
+        // Mostra apenas o slide atual (adiciona a classe 'visivel')
+        slides[slideIndex].classList.add('visivel');
+    }
+</script>
+</body>
+</html>

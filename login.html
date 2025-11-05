@@ -4,12 +4,28 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>LOGIN</title>
+    <title>LOGIN - Meu Portfólio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
     <style>
+        /* Variáveis CSS para facilitar a manutenção das cores e fontes */
+        :root {
+            --primary-color: #d81b8f; /* Rosa principal (Botão/Destaque) */
+            --secondary-color: #5c51bd; /* Roxo/Azulado (Fundo/Texto do título secundário) */
+            --background-color: #f0f2f5; /* Fundo suave cinza claro */
+            --card-background: #ffffff; /* Fundo do card branco */
+            --text-color-light: #6b7280; /* Texto cinza claro para descrições */
+            --input-bg-color: #f3f4f6; /* Fundo dos inputs cinza muito claro */
+            --input-border-color: #e5e7eb; /* Borda dos inputs */
+            --icon-color: #9ca3af; /* Cor dos ícones nos inputs */
+            --hover-button-color: #c0167c; /* Rosa mais escuro para hover do botão */
+            --font-main: 'Montserrat', sans-serif;
+        }
+
         body {
-            font-family: Arial, sans-serif;
-            background-color:  hsl(211, 100%, 30%);
+            font-family: var(--font-main);
+            background-color: var(--background-color);
             margin: 0;
             padding: 0;
             display: flex;
@@ -17,77 +33,124 @@
             align-items: center;
             justify-content: center;
             min-height: 100vh;
-        }
-
-        h1 {
-            color: white;
-            margin-bottom: 30px;
-            font-size: 36px;
+            color: #333;
         }
 
         .container {
-            background-color: white;
-            padding: 40px;
-            border-radius: 12px;
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+            background-color: var(--card-background);
+            padding: 40px 50px; /* Ajuste no padding */
+            border-radius: 16px; /* Bordas mais suaves */
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); /* Sombra mais suave e elegante */
             width: 90%;
-            max-width: 400px;
+            max-width: 440px; /* Aumentei um pouco a largura máxima */
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .logo {
+            color: var(--secondary-color); /* Cor do logo roxo/azulado */
+            font-size: 32px; /* Tamanho da fonte do logo */
+            font-weight: 700;
+            margin-bottom: 10px;
+            letter-spacing: -0.5px;
+        }
+
+        .welcome-message {
+            color: var(--text-color-light);
+            font-size: 16px;
+            margin-bottom: 40px; /* Mais espaço abaixo da mensagem */
+            line-height: 1.5;
         }
 
         .form-group {
-            margin-bottom: 20px;
+            margin-bottom: 25px;
             text-align: left;
+            position: relative; /* Para posicionar o ícone */
         }
 
-        label {
-            display: block;
-            margin-bottom: 8px;
-            font-weight: bold;
-            color:  hsl(211, 100%, 30%);
+        .input-wrapper {
+            display: flex;
+            align-items: center;
+            background-color: var(--input-bg-color);
+            border-radius: 10px; /* Bordas dos inputs mais arredondadas */
+            padding: 10px 15px; /* Padding interno */
+            border: 1px solid var(--input-border-color); /* Borda sutil */
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .input-wrapper:focus-within {
+            border-color: var(--primary-color); /* Borda rosa no foco */
+            box-shadow: 0 0 0 3px rgba(216, 27, 143, 0.2); /* Sombra suave no foco */
+        }
+
+        .input-wrapper i {
+            color: var(--icon-color);
+            margin-right: 12px;
+            font-size: 18px;
         }
 
         input[type="text"],
         input[type="password"] {
-            width: 100%;
-            padding: 10px;
-            border: 1px solid #ffc6e3;
-            border-radius: 8px;
-            box-sizing: border-box;
+            flex-grow: 1; /* Faz o input preencher o espaço restante */
+            padding: 5px 0; /* Ajusta o padding para alinhar com o ícone */
+            border: none;
+            background: transparent; /* Fundo transparente para o input */
             font-size: 16px;
+            color: #333;
+            outline: none; /* Remove o outline padrão */
+            font-family: var(--font-main); /* Usa a mesma fonte principal */
+            font-weight: 500;
+        }
+
+        input::placeholder {
+            color: var(--icon-color);
+            font-weight: 400;
         }
 
         button {
             width: 100%;
-            padding: 12px;
-            background-color:  hsl(211, 100%, 30%);
+            padding: 15px;
+            background-color: var(--primary-color); /* Botão Rosa */
             color: white;
             border: none;
-            border-radius: 8px;
+            border-radius: 10px; /* Bordas do botão arredondadas */
             font-size: 18px;
-            font-weight: bold;
+            font-weight: 600;
             cursor: pointer;
-            transition: background-color 0.3s ease;
+            transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+            box-shadow: 0 5px 15px rgba(216, 27, 143, 0.3); /* Sombra suave no botão */
+            letter-spacing: 0.5px;
         }
 
         button:hover {
-            background-color:  hsl(211, 100%, 30%);
+            background-color: var(--hover-button-color); /* Rosa mais escuro no hover */
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(216, 27, 143, 0.4);
+        }
+
+        button:active {
+            transform: translateY(0);
+            box-shadow: 0 3px 10px rgba(216, 27, 143, 0.2);
         }
     </style>
 </head>
 
 <body>
-    <h1>LOGIN</h1>
-
     <div class="container">
+        <div class="logo">Bem-vindo ao meu Portfólio</div>
+        <p class="welcome-message">Acesse sua conta para visualizar meus projetos.</p>
+
         <form onsubmit="return false;">
             <div class="form-group">
-                <label for="username">Usuário:</label>
-                <input type="text" id="username" name="username" required />
+                <div class="input-wrapper">
+                    <i class="fas fa-at"></i> <input type="text" id="username" name="username" placeholder="Email" required />
+                </div>
             </div>
 
             <div class="form-group">
-                <label for="password">Senha:</label>
-                <input type="password" id="password" name="password" required />
+                <div class="input-wrapper">
+                    <i class="fas fa-lock"></i> <input type="password" id="password" name="password" placeholder="Senha" required />
+                </div>
             </div>
 
             <button type="button" onclick="logar()">Entrar</button>
@@ -99,11 +162,12 @@
             var login = document.getElementById("username").value;
             var senha = document.getElementById("password").value;
 
+            // Validação simples (apenas para demonstração)
             if (login === "admin" && senha === "admin") {
                 alert("Login realizado com sucesso!");
-                location.href= "index.html";
+                location.href = "index.html"; // Redireciona para index.html
             } else {
-                alert("Usuário ou senha incorretos.");
+                alert("Email ou senha incorretos.");
             }
         }
     </script>
